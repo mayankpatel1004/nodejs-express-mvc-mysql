@@ -30,6 +30,37 @@ module.exports = {
             }
         )
     },
+    excelRead: callBack => {
+        var xlsx = require("xlsx");
+        var wb = xlsx.readFile('/home/digiflux/Documents/work/practice/mayank-practice/uploads/rex.xlsx',{cellDates:true});
+        var ws = wb.Sheets["Rex-Liquor-Data"];
+        var data = xlsx.utils.sheet_to_json(ws);
+        var newData = data.map(function(record){
+            record.Net = record.Cost - record.Sales;
+            delete record.Sales;
+            delete record.Cost;
+            return record;
+        });
+        return callBack(null, newData);
+        
+    },
+    excelWrite: callBack => {
+        var xlsx = require("xlsx");
+        var wb = xlsx.readFile('uploads/sample.xlsx',{cellDates:true});
+        var ws = wb.Sheets["sheet1"];
+        var data = xlsx.utils.sheet_to_json(ws);
+        var newData = data.map(function(record){
+            record.Net = record.Cost - record.Sales;
+            delete record.Sales;
+            delete record.Cost;
+            return record;
+        });
+        var newWB = xlsx.utils.book_new();
+        var newWS = xlsx.utils.json_to_sheet(newData);
+        xlsx.utils.book_append_sheet(newWB,newWS,"New");
+        xlsx.writeFile(newWB,"uploads/New"+Date.now()+".xlsx");
+        return callBack(null, newData);
+    },
     getUserByUserId: (id, callBack) => {
         pool.query(
             `select id,firstName,lastName,gender,email,number from registration where id = ?`,
