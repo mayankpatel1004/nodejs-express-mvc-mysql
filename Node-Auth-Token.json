@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "a464a764-7991-40d3-9267-650fa4ee64d0",
+		"name": "Node-Auth-Token",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\" : \"asd234@gmail.com\",\n\t\"password\": \"test123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjIsImZpcnN0TmFtZSI6IlJlY29yZCIsImxhc3ROYW1lIjoiUGF0ZWwxIiwiZ2VuZGVyIjoibSIsImVtYWlsIjoiYXNkMjM0QGdtYWlsLmNvbSIsIm51bWJlciI6MTJ9LCJpYXQiOjE1ODc3OTE1ODIsImV4cCI6MTU4Nzc5NTE4Mn0.5Vzf69lgEcO2KH9yDoLozMPPei9NZ8TV6KccF_55N4o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\" : \"Mayank\",\n\t\"last_name\" : \"Patel\",\n\t\"gender\" : \"m\",\n\t\"email\" : \"test@gmail.com\",\n\t\"password\": \"test123\",\n\t\"number\": \"12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjIsImZpcnN0TmFtZSI6IlJlY29yZCIsImxhc3ROYW1lIjoiUGF0ZWwxIiwiZ2VuZGVyIjoibSIsImVtYWlsIjoiYXNkMjM0QGdtYWlsLmNvbSIsIm51bWJlciI6MTJ9LCJpYXQiOjE1ODc3OTIwMTcsImV4cCI6MTU4Nzc5NTYxN30.dMVSQhHnTTgNCKTPJQhXlzt3abxBDNWkAL1asQVOwTI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":2,\n\t\"first_name\" : \"Record\",\n\t\"last_name\" : \"Patel1\",\n\t\"gender\" : \"m\",\n\t\"email\" : \"asd23233334@gmail.com\",\n\t\"password\": \"test123\",\n\t\"number\": \"12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getuserbyuserid",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjIsImZpcnN0TmFtZSI6IlJlY29yZCIsImxhc3ROYW1lIjoiUGF0ZWwxIiwiZ2VuZGVyIjoibSIsImVtYWlsIjoiYXNkMjM0QGdtYWlsLmNvbSIsIm51bWJlciI6MTJ9LCJpYXQiOjE1ODc3OTE5MjEsImV4cCI6MTU4Nzc5NTUyMX0.SoZbXkFYnKO3rlnjkky9p17sOmqASoU_nl10RqWA1eY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\" : \"test\",\n\t\"last_name\" : \"Patel\",\n\t\"gender\" : \"m\",\n\t\"email\" : \"test23@gmail.com\",\n\t\"password\": \"test123\",\n\t\"number\": \"12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/users/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjIsImZpcnN0TmFtZSI6IlJlY29yZCIsImxhc3ROYW1lIjoiUGF0ZWwxIiwiZ2VuZGVyIjoibSIsImVtYWlsIjoiYXNkMjM0QGdtYWlsLmNvbSIsIm51bWJlciI6MTJ9LCJpYXQiOjE1ODc3OTIwMTcsImV4cCI6MTU4Nzc5NTYxN30.dMVSQhHnTTgNCKTPJQhXlzt3abxBDNWkAL1asQVOwTI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":2,\n\t\"first_name\" : \"Record111\",\n\t\"last_name\" : \"Patel1\",\n\t\"gender\" : \"m\",\n\t\"email\" : \"asd234@gmail.com\",\n\t\"password\": \"test123\",\n\t\"number\": \"12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjIsImZpcnN0TmFtZSI6IlJlY29yZCIsImxhc3ROYW1lIjoiUGF0ZWwxIiwiZ2VuZGVyIjoibSIsImVtYWlsIjoiYXNkMjM0QGdtYWlsLmNvbSIsIm51bWJlciI6MTJ9LCJpYXQiOjE1ODc3OTE5MjEsImV4cCI6MTU4Nzc5NTUyMX0.SoZbXkFYnKO3rlnjkky9p17sOmqASoU_nl10RqWA1eY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\" : 11\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
