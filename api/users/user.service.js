@@ -78,6 +78,16 @@ module.exports = {
             }
         );
     },
+    exportUsersPdf: callBack => {
+        const PDFDocument = require('pdfkit');
+        const fs = require('fs');
+        const doc = new PDFDocument();
+        const content = '<table><tr><th>No.</th><th>Name</th><th>Number</th><th>Status</th></tr><tr><td>1</td><td>Mayank</td><td>23</td><td>Active</td></tr></table>';
+        doc.pipe(fs.createWriteStream('uploads/users.pdf'));
+        doc.fontSize(20).text(content);
+        doc.end();
+        return callBack(null, {});
+    },
     getUserByUserId: (id, callBack) => {
         pool.query(
             `select id,firstName,lastName,gender,email,number from registration where id = ?`,

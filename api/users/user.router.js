@@ -1,4 +1,4 @@
-const {createUser, getUserByUserId, getUsers, updateUsers, deleteUser,login, excelRead, excelWrite,exportUsers} = require("./user.controller");
+const {createUser, getUserByUserId, getUsers, updateUsers, deleteUser,login, excelRead, excelWrite,exportUsers,exportUsersPdf} = require("./user.controller");
 const router = require("express").Router();
 const { checkToken } = require('../../auth/token_validation');
 
@@ -7,6 +7,7 @@ router.post("/", checkToken, createUser);
 router.get('/excelread',checkToken,excelRead);
 router.get('/excelwrite',checkToken,excelWrite);
 router.get('/exportusers',checkToken,exportUsers);
+router.get('/exportuserspdf',checkToken,exportUsersPdf);
 router.get("/:id", checkToken, getUserByUserId);
 router.patch("/", checkToken, updateUsers);
 router.delete("/", checkToken, deleteUser);
