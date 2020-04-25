@@ -1,4 +1,4 @@
-const { create, getUserByUserId, getUsers, updateUser, deleteUser,getUserByUserEmail, excelRead, excelWrite } = require('./user.service');
+const { create, getUserByUserId, getUsers, updateUser, deleteUser,getUserByUserEmail, excelRead, excelWrite, exportUsers } = require('./user.service');
 
 const {genSaltSync, hashSync, compareSync} = require('bcrypt');
 const { sign } = require('jsonwebtoken');
@@ -74,6 +74,18 @@ module.exports = {
     },
     excelWrite : (req, res) => {
         excelWrite((err, results) => {
+            if(err) {
+                console.log(err);
+                return;
+            }
+            return res.json({
+                success: 1,
+                data: results
+            });
+        });
+    },
+    exportUsers : (req, res) => {
+        exportUsers((err, results) => {
             if(err) {
                 console.log(err);
                 return;

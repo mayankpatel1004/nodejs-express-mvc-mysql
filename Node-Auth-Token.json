@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"email\" : \"asd234@gmail.com\",\n\t\"password\": \"test123\"\n}",
+					"raw": "{\n\t\"email\" : \"test@gmail.com\",\n\t\"password\": \"test123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -232,6 +232,135 @@
 					"path": [
 						"api",
 						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excel Read",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IlJlY29yZCIsImxhc3ROYW1lIjoiUGF0ZWwxIiwiZ2VuZGVyIjoibSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJudW1iZXIiOjEyfSwiaWF0IjoxNTg3ODA0MTI0LCJleHAiOjE1ODc4MDc3MjR9.ysgJqEy_MlTvylxESZNo4vL7M3UGR_wOOWTs-UqSfAY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\" : \"Mayank\",\n\t\"last_name\" : \"Patel\",\n\t\"gender\" : \"m\",\n\t\"email\" : \"test@gmail.com\",\n\t\"password\": \"test123\",\n\t\"number\": \"12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/users/excelread",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"users",
+						"excelread"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excel Write",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IlJlY29yZCIsImxhc3ROYW1lIjoiUGF0ZWwxIiwiZ2VuZGVyIjoibSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJudW1iZXIiOjEyfSwiaWF0IjoxNTg3ODA0MTI0LCJleHAiOjE1ODc4MDc3MjR9.ysgJqEy_MlTvylxESZNo4vL7M3UGR_wOOWTs-UqSfAY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\" : \"Mayank\",\n\t\"last_name\" : \"Patel\",\n\t\"gender\" : \"m\",\n\t\"email\" : \"test@gmail.com\",\n\t\"password\": \"test123\",\n\t\"number\": \"12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/users/excelwrite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"users",
+						"excelwrite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IlJlY29yZCIsImxhc3ROYW1lIjoiUGF0ZWwxIiwiZ2VuZGVyIjoibSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJudW1iZXIiOjEyfSwiaWF0IjoxNTg3ODA0MTI0LCJleHAiOjE1ODc4MDc3MjR9.ysgJqEy_MlTvylxESZNo4vL7M3UGR_wOOWTs-UqSfAY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\" : \"Mayank\",\n\t\"last_name\" : \"Patel\",\n\t\"gender\" : \"m\",\n\t\"email\" : \"test@gmail.com\",\n\t\"password\": \"test123\",\n\t\"number\": \"12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/users/exportusers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"users",
+						"exportusers"
 					]
 				}
 			},

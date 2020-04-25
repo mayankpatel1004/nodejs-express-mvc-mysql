@@ -61,6 +61,23 @@ module.exports = {
         xlsx.writeFile(newWB,"uploads/New"+Date.now()+".xlsx");
         return callBack(null, newData);
     },
+    exportUsers: callBack => {
+        var xlsx = require("xlsx");
+        pool.query(
+            `select id,firstName,lastName,gender,email,number from registration`,
+            [],
+            (error, results, fields) => {
+                if(error){
+                    callBack(error);
+                }
+                var newWB = xlsx.utils.book_new();
+                var newWS = xlsx.utils.json_to_sheet(results);
+                xlsx.utils.book_append_sheet(newWB,newWS,"New");
+                xlsx.writeFile(newWB,"uploads/Users_"+Date.now()+".xlsx");
+                return callBack(null, results);
+            }
+        );
+    },
     getUserByUserId: (id, callBack) => {
         pool.query(
             `select id,firstName,lastName,gender,email,number from registration where id = ?`,
