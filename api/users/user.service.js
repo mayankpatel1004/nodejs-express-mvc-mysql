@@ -11,9 +11,32 @@ module.exports = {
                         return callBack(error.code)
                     } else {
                         return callBack(error)
-                    }
-                    
+                    }          
                 }
+                // Email script start //
+                var nodemailer = require('nodemailer');
+                var transporter = nodemailer.createTransport({
+                    service: 'gmail',
+                    auth: {
+                      user: 'mayank.patel.developer@gmail.com',
+                      pass: 'XXXXXX'
+                    }
+                });
+                var mailOptions = {
+                    from: 'mayank.patel.developer@gmail.com',
+                    to: 'mayankp@yopmail.com',
+                    subject: 'Thank you for your registration on our web portal',
+                    text: `Hi User, thank you for your registration on our portal.
+                            You can access your account as per your expectations<br /><h4>Thank you.</h4>.`
+                    //html: '<h1>Hi Smartherd</h1><p>Your Messsage</p>';
+                };
+                transporter.sendMail(mailOptions, function(error, info){
+                    if (error) {
+                      console.log(error);
+                    } else {
+                      console.log('Email sent: ' + info.response);
+                    }
+                  });
                 return callBack(null, results)
             }
         );
