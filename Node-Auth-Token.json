@@ -85,7 +85,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjIsImZpcnN0TmFtZSI6IlJlY29yZCIsImxhc3ROYW1lIjoiUGF0ZWwxIiwiZ2VuZGVyIjoibSIsImVtYWlsIjoiYXNkMjM0QGdtYWlsLmNvbSIsIm51bWJlciI6MTJ9LCJpYXQiOjE1ODc3OTIwMTcsImV4cCI6MTU4Nzc5NTYxN30.dMVSQhHnTTgNCKTPJQhXlzt3abxBDNWkAL1asQVOwTI",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IlJlY29yZCIsImxhc3ROYW1lIjoiUGF0ZWwxIiwiZ2VuZGVyIjoibSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJudW1iZXIiOjEyfSwiaWF0IjoxNTg3ODExOTk1LCJleHAiOjE1ODc4MTU1OTV9.BTNFT9cU0NMN9ywE2Caxhz77yI68BhCW7Eb5wHdqx54",
 							"type": "string"
 						}
 					]
@@ -94,7 +94,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"id\":2,\n\t\"first_name\" : \"Record\",\n\t\"last_name\" : \"Patel1\",\n\t\"gender\" : \"m\",\n\t\"email\" : \"asd23233334@gmail.com\",\n\t\"password\": \"test123\",\n\t\"number\": \"12\"\n}",
+					"raw": "{\n\t\"id\":2,\n\t\"first_name\" : \"Record\",\n\t\"last_name\" : \"Patel1\",\n\t\"gender\" : \"m\",\n\t\"email\" : \"ektammp@gmail.com\",\n\t\"password\": \"test123\",\n\t\"number\": \"12\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -361,6 +361,49 @@
 						"api",
 						"users",
 						"exportusers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export Users PDF",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IlJlY29yZCIsImxhc3ROYW1lIjoiUGF0ZWwxIiwiZ2VuZGVyIjoibSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJudW1iZXIiOjEyfSwiaWF0IjoxNTg3ODA4NjIyLCJleHAiOjE1ODc4MTIyMjJ9.7SKmLdtjwRsTdwe3xEGXKRHqPkqRaVpaHTJCWkk6W0M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\" : \"Mayank\",\n\t\"last_name\" : \"Patel\",\n\t\"gender\" : \"m\",\n\t\"email\" : \"test@gmail.com\",\n\t\"password\": \"test123\",\n\t\"number\": \"12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/users/exportuserspdf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"users",
+						"exportuserspdf"
 					]
 				}
 			},
